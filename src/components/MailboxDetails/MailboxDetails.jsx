@@ -6,8 +6,11 @@ const MailboxDetails = (props) => {
     const selectedBox = props.mailboxes.find((mailbox) => (
         mailbox._id === Number(mailboxId)
     ));
+    if (!selectedBox) {
+        return <h2>Mailbox not Found!</h2>
 
-    return (
+    } else {
+        return (
         <>
             <h2> Mailbox {selectedBox._id}</h2>
             <dl>
@@ -20,6 +23,7 @@ const MailboxDetails = (props) => {
             </dl>
         </>
     );
+};
 };
 
 
